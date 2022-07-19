@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Redactr</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form onsubmit="return processContent()">
+        <h3>Redactr</h3>
+
+        <label for="content">Content</label>
+        <textarea name="text" id="content" cols="40" rows="5" placeholder="Paste/Type content here..."></textarea>
+
+        <label for="scramble">Scramble</label>
+        <input type="input" placeholder="Words to scramble separated by space" id="scramble">
+
+        <label for="repl">Replacement</label>
+        <input type="input" placeholder="Input character[?,-,^,& etc.] or word to use for replacment" id="repl">
+
+        <button type="submit">Redact Now</button>
+        <!-- <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div> -->
+    </form>
+</body>
+</html>
