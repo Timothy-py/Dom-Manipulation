@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dom.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1</button>
+</body>
+
+<script>
+    window.onclick = e => {
+        // get clicked element
+        const elmt = e.target
+        // get clicked element text
+        const elmtText = e.target.innerText
+
+        // create container div
+        const divEl = document.createElement('div')
+        
+        // // create arrow elements
+        // const arrowL = document.createElement('span')
+        // const arrowR =  document.createElement('span')
+        // // add class names to arrow elements
+        // arrowL.classList.add('arrow', 'arrowleft')
+        // arrowR.classList.add('arrow', 'arrowright')
+
+        // create left and right child nodes
+        const buttonL = document.createElement('button')
+        const buttonR = document.createElement('button')
+        // add class name to left and right nodes
+        buttonL.classList.add('left')
+        buttonR.classList.add('right')
+
+        // add text to L and R node elements
+        const innerhtmlL = buttonL.innerHTML = `${elmtText}0`
+        const innerhtmlR = buttonR.innerHTML = `${elmtText}1`
+
+        // insert L and R node element into a div
+        divEl.appendChild(buttonL)
+        divEl.appendChild(buttonR)
+
+        // // append arrow elements to button elements
+        // buttonL.appendChild(arrowL)
+        // buttonR.appendChild(arrowR)
+
+        // insert the div element into the main clicked element
+        elmt.appendChild(divEl)
+
+    }
+
+</script>
+
+</html>
