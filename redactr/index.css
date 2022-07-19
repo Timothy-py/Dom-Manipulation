@@ -17,8 +17,8 @@ body{
     top: 50%;
 }
 .background .shape{
-    height: 170px;
-    width: 170px;
+    height: 150px;
+    width: 150px;
     position: absolute;
     border-radius: 50%;
 }
@@ -40,7 +40,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 560px;
+    height: 580px;
     width: 440px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -94,6 +94,10 @@ textarea{
     font-weight: 300;
 }
 
+#result{
+    display: none;
+}
+
 button{
     margin-top: 100px;
     margin-left: 30px;
@@ -106,25 +110,19 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-/* .social{
-  margin-top: 30px;
-  display: flex;
+#stats{
+  margin-top: -400px;
+  margin-left: 430px;
+  display: none;
 }
-.social div{
+#stats div{
   background: red;
   width: 150px;
   border-radius: 3px;
   padding: 5px 10px 10px 5px;
   background-color: rgba(255,255,255,0.27);
   color: #eaf0fb;
-  text-align: center;
 }
-.social div:hover{
+#stats div:hover{
   background-color: rgba(255,255,255,0.47);
 }
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
-} */
