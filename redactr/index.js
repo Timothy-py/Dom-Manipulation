@@ -45,15 +45,9 @@ function processContent() {
 
     // display stats
     statsElement.style.display = "block"
-    scannedElement.value = `Total scanned words: ${total_scanned_words}`
-    timeElement.value = `Total time taken: ${total_time_taken}`
+    scannedElement.innerHTML = `Total scanned words: ${total_scanned_words}`
+    timeElement.innerHTML = `Total time taken: ${total_time_taken.toPrecision(3)}s`
     
-
-
-
-    console.log(new_content)
-    console.log(total_scanned_words)
-    console.log(total_time_taken.toPrecision(3))
     
     // prevent form from submitting
     return false

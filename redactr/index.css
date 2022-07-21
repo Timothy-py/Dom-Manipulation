@@ -120,13 +120,13 @@ button{
 }
 #stats{
   margin-top: -200px;
-  margin-right: -200px;
+  margin-right: -230px;
   display: none;
   float: right;
 }
 #stats div{
   background: red;
-  width: 150px;
+  width: fit-content;
   border-radius: 3px;
   padding: 5px 10px 10px 5px;
   background-color: rgba(255,255,255,0.27);
