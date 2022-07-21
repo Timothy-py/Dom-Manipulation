@@ -94,7 +94,10 @@ textarea{
     font-weight: 300;
 }
 
-#result{
+.display{
+    display: block;
+}
+.hide{
     display: none;
 }
 
@@ -110,10 +113,16 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+#resultDiv{
+    margin-left: -400px;
+    margin-top: -350px;
+    float: left;
+}
 #stats{
-  margin-top: -400px;
-  margin-left: 430px;
+  margin-top: -200px;
+  margin-right: -200px;
   display: none;
+  float: right;
 }
 #stats div{
   background: red;

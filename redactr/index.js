@@ -3,10 +3,11 @@ function processContent() {
     const content = document.getElementById('content').value    
     const scramble = document.getElementById('scramble').value
     const repl = document.getElementById('repl').value
+    const statsElement = document.getElementById('stats')
+    const scannedElement = document.getElementById('scanned')
+    const timeElement = document.getElementById('time')
     const resultElement = document.getElementById('result')
-    const stats = document.getElementById('stats')
-    const scanned = document.getElementById('scanned')
-    const time = document.getElementById('time')
+    const resultDiv = document.getElementById('resultDiv')
 
     // default replacement
     let replacement = "****"
@@ -27,7 +28,7 @@ function processContent() {
     for (let i = 0; i < scramble_list.length; i++) {
         const word = scramble_list[i];
         
-        new_content = new_content.replace(word, replacement)
+        new_content = new_content.replaceAll(word, replacement)
     }
     const end_time = performance.now() //end the timer
 
@@ -39,19 +40,20 @@ function processContent() {
 
     // display result
     resultElement.value = new_content
-    resultElement.style.display = "block"
+    resultDiv.classList.remove('hide')
+    resultDiv.className = 'display'
 
     // display stats
-    stats.style.display = "block"
-    scanned.value = `Total scanned words: ${total_scanned_words}`
-    time.value = `Total time taken: ${total_time_taken}`
+    statsElement.style.display = "block"
+    scannedElement.value = `Total scanned words: ${total_scanned_words}`
+    timeElement.value = `Total time taken: ${total_time_taken}`
     
 
 
 
-    // console.log(new_content)
-    // console.log(total_scanned_words)
-    // console.log(total_time_taken)
+    console.log(new_content)
+    console.log(total_scanned_words)
+    console.log(total_time_taken.toPrecision(3))
     
     // prevent form from submitting
     return false
