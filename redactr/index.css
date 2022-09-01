@@ -60,6 +60,9 @@ form *{
     outline: none;
     border: none;
 }
+form h6{
+    text-align: center;
+}
 form h3{
     font-size: 32px;
     font-weight: 500;
