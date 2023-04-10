@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Place</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="address"
+      id="address"
+      placeholder="Enter address here..."
+    />
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key={API_KEY}&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+
+    <!-- // --------------------GOOGLE PLACE-------------------- -->
+    <script>
+      // Create the autocomplete object, restricting the search to geographical location types.
+      let autocomplete;
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById("address"),
+          { types: ["geocode"] }
+        );
+
+        // When the user selects an address from the dropdown, populate the address fields in the form.
+        autocomplete.addListener("place_changed", onPlaceChanged);
+      }
+
+      function onPlaceChanged() {
+        var place = autocomplete.getPlace();
+        // console.log(place.formatted_address);
+        console.log(place);
+
+        if (!place.geometry) {
+          // user did not select a prediction, reset the input field
+          document.getElementById("address").placeholder = "Enter a place here";
+        } else {
+          // display details about the valid place
+          document.getElementById("address").value = place.name;
+          const lat = place.geometry.location.lat();
+          const long = place.geometry.location.lng();
+          console.log("Latitude = ", lat);
+          console.log("Longitude = ", long);
+        }
+      }
+    </script>
+  </body>
+</html>
